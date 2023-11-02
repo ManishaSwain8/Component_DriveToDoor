@@ -30,5 +30,5 @@ npm install /npm i
 
 4.
  ```sh
-npm start
+npm run dev
 ```
