@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 import { stag } from "./Anim";
+import { imgAnim } from "./Anim";
 import { motion } from "framer-motion";
 const itemsPerPage = 8;
 
@@ -166,19 +167,22 @@ export default function () {
           <div className=" mt-8 flex flex-wrap gap-10  justify-center items-center ">
             {sortedData.slice(startIndex, endIndex).map((card, i) => (
               <Box>
+                <img
+                  src={card.imageUrl}
+                  className="h-42 w-90 rounded-xl  "
+                  alt="img"
+                />
                 <motion.div
-                  variants={stag}
+                  variants={imgAnim}
                   initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 0.7, delay: i * 0.2 }}
+                  whileInView={{
+                    scale: [0, 1],
+                    opacity: 1,
+                  }}
+                  transition={{ duration: 0.8, delay: i * 0.3 }}
                   viewport={{ once: true }}
                   key={i}
                 >
-                  <img
-                    src={card.imageUrl}
-                    className="h-42 w-90 rounded-xl  "
-                    alt="img"
-                  />
                   <div className="flex  mt-2 justify-between">
                     <h3 className="mt-2 font-semibold text-gray-800 text-2xl ">
                       {card.car_name}
