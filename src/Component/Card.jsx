@@ -179,7 +179,7 @@ export default function () {
                     scale: [0, 1],
                     opacity: 1,
                   }}
-                  transition={{ duration: 0.8, delay: i * 0.3 }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
                   viewport={{ once: true }}
                   key={i}
                 >
